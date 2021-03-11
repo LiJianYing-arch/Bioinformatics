@@ -1,3 +1,0 @@
-$str="a b	cd\tefg\r";
-
-print "$str";

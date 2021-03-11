@@ -1,5 +1,0 @@
-$string='abcdfg';
-if($string =~ m/e+/)
-{print "yes!\n";}
-else
-{print "no!\n";}

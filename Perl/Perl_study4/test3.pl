@@ -1,3 +1,0 @@
-use warnings;
-use strict;
-

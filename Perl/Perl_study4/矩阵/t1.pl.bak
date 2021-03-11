@@ -1,9 +1,0 @@
-$text="Hello world!\n";  # test values
-print $text;
-
-
-$text='Hello world!\n';
-print $text;
-
-# "  ”Î ' ' ≤ªÕ¨
-
