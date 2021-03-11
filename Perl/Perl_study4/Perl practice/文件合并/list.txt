@@ -1,0 +1,6 @@
+protein1.fasta
+protein2.fasta
+protein3.fasta
+protein4.fasta
+protein5.fasta
+protein6.fasta

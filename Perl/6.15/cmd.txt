@@ -1,0 +1,93 @@
+#!/usr/bin/perl
+$string="abc1234567qwe\n";# \n行
+print "$string";
+print "\n";
+chop $string;
+print "$string";
+#!/usr/bin/perl
+$string="abc1234567qwe\n";# \n行
+print "$string ::";
+print "\n";
+chop $string;  ##chomp $string;
+print "$string ::";
+
+STDIN
+STDOUT
+STDERRER
+while ($line=<STDIN>){
+print "$_";
+}
+while ($line=<STDIN>){
+print "print::$line";
+}
+#while (<>){
+#print "print::$_";
+#}
+while (<>){
+for($_){
+$sum=$sum+$_;
+print "Result::$sum\n";
+}
+}
+
+$sum=1;
+for($i=1;$i=10;$i++){
+$sum+=$i;
+}
+print "$sum\n";
+
+
+@a=(2,4,6,67,9);
+$n=@a;
+for ($i=0;$i<=$n;$i++){
+print "For::$a[$i]\n";
+}
+foreach (@a) {
+print "Foreach::$_\n"
+}
+for $line(@a){
+print "Foreach::$line\n";
+}
+$string="QianMatchHou";
+$string=~m/Match/;
+print "Get::$&\n";# $&
+print "Get::$`\n";# $`匹配前
+print "Get::$'\n";# $' 后
+@a=qw(aaa bbb ccc ddd);
+$"=":";  #$" 改变间隔内容
+print "@a\n";
+@a=qw(aaa bbb ccc ddd);
+$"="-:-";  #$" 改变间隔内容 $.当前行 $\ s
+print "@a\n";
+
+$\="--------------------\n";
+print "111111\n";
+print "222222\n";
+print "333333\n";
+
+打印行数
+open(FILE,"data.txt");
+$c=1;
+while($line=<FILE> and ($c<=2)){
+print "$c::$line";
+$c++;
+}
+
+
+$DNA1="ATGCCCCTAGGCTTAAGC";
+$DNA2="ATGCGCTA";
+$DNA=$DNA1.$DNA2;#
+print "$DNA\n";
+print "$DNA1\n";
+print "$DNA2\n";
+print "$DNA1$DNA2\n";
+$RNA==~s/T/U/g;  ## ~tr不加g！！！
+
+
+
+
+
+
+
+
+

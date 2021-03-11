@@ -1,0 +1,11 @@
+$a=<STDIN>;
+chomp $;
+
+print "the result is $a !";
+
+
+$text='Hello world!\n';
+print $text;
+
+# "  ”Î ' ' ≤ªÕ¨
+

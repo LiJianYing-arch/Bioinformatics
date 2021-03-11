@@ -1,0 +1,29 @@
+
+@words=qw(qqq bbb ddd aaa jjj);
+@sorted=sort @words;
+@sorted=sort{$b cmp $a} @words;  #reverse
+print "@sorted\n";
+@sorted= reverse sort(@words);   #@sorted= sort reverse(@words);
+print "@sorted\n";
+
+#@num=(1..100);
+#print "@num\n";
+#@words=("a".."az");
+#@words=("perl") x 10;
+#print "@words\n";
+
+@words=qw(da gg kskv lll hh fv cc);
+$count=0;
+foreach $w (@words){
+   print "$count\t$w\n";
+   $count=$count +1;
+}
+
+
+@num=(1..5);
+foreach $xx (@num){
+$xx=$xx + 10;  #$xx+=10
+print "$xx\n";
+}
+print "@num\n";
+

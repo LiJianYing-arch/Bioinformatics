@@ -1,0 +1,59 @@
+#$DNA="ATGCCCCTAGGCacggTTAAGCTTTTgggAAAA";
+$name=<>;
+open(FILE,"$name");
+@data=<FILE>;
+$DNA=join(",@data);
+$DNA=~tr/atcg/ATGC/;
+#@DNA=split(",$DNA);
+print "@DNA\n";s
+$count_A=0;
+$count_T=0;
+$count_G=0;
+$count_C=0;
+$err=0;
+for (@DNA){
+if($_ eq 'A'){
+$count_A++;
+}
+elsif($_ eq 'T'){
+$count_T++;
+}
+elsif($_ eq G){
+$count_G++;
+}
+elsif($_ eq 'C'){
+$count_C++;
+}
+
+
+#$DNA="ATGCCCCTAGGCacggTTAAGCTTTTgggAAAA";
+$name=<>;
+open(FILE,"$name");
+@data=<FILE>;
+$DNA=join(",@data);
+$DNA=~s/\s+//g;
+while($DNA=~/a/ig){
+$count_A++;
+}
+while($DNA=~/t/ig){
+$count_T++;
+}
+while($DNA=~/g/ig){
+$count_G++;
+}
+while($DNA=~/c/ig){
+$count_C++;
+}
+print "A=$count_A\n";
+print "T=$count_T\n";
+print "G=$count_G\n";
+print "C=$count_C\n";
+print "ERR=$ERR\n";
+else($_eq err){
+$err++;
+}
+}
+print "A=$count_A\n";
+print "T=$count_T\n";
+print "G=$count_G\n";
+print "C=$count_C\n";

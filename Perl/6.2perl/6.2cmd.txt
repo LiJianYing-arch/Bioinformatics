@@ -1,0 +1,85 @@
+#打开文件夹 
+#!/usr/bin/perl;
+opendir(DIR,"6.2");
+@file=readdir(DIR);
+close(DIR);
+print "@file\n";
+#foreach $line(@file){
+#print "$line\n";
+#}
+chdir "6.2";
+mkdir "newdir";
+
+#!/usr/bin/perl;
+chdir '..';
+opendir(DIR2,'.');
+@file=readdir(DIR2);
+close(DIR2);
+print "@file\n";
+
+#!/usr/bin/perl;
+opendir(DIR,"6.2");
+@file=readdir(DIR);
+close(DIR);
+chdir "6.2";
+foreach $line(@file){
+print "$line\n";
+if ($line=~/\.txt/){
+print "$line\n";
+open(F,$line);
+@f=<F>;
+}
+}
+#print "@f";
+
+#!/usr/bin/perl;
+opendir(DIR,"6.2");
+@file=readdir(DIR);
+close(DIR);
+chdir "6.2";
+foreach $line(@file){
+print "$line\n";
+if ($line=~/\.txt/){
+print "$line\n";
+open(F,$line);
+@f=<F>;
+}
+print "@f\n";
+}
+
+注释
+print <<EE
+lssll
+ss
+ggghhh
+dddaa
+EE
+
+#!/usr/bin/perl;
+print -e "6.2/2.txt";
+if (-e "6.2/2.txt"){
+print "File exist\n";
+}
+模块安装
+perl -MCPAN -e shell
+exit
+i /LWP::/
+install LWP::Simple
+
+#!/usr/bin/perl;
+use LWP::Simple;
+$URL=get("http://cpst.hzau.edu.cn/Index.html");
+open (FILE,">hzau.txt");
+print FILE "$URL\n";
+
+#!/usr/bin/perl;
+use LWP::Simple;
+use HTML::TreeBuilder;
+use HTML::FormatText;
+
+$URL=get("http://cpst.hzau.edu.cn/Index.html");
+$Format=HTML::FormatText->new;
+$Tree=HTML::TreeBuilder->new;
+$Tree->parse($URL);
+$pa=$Format->format($Tree);
+print "$pa";

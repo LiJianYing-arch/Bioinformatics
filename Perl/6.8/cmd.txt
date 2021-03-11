@@ -1,0 +1,120 @@
+下载网页图片 连接
+use LWP::Simple;
+use HTML::LinkExtor;
+$URL=get("http://cpst.hzau.edu.cn/Index.html");
+$Linksextor=HTML::LinkExtor->new(\&links);
+$Linksextor->parse($URL);
+
+sub links {
+($tag,%links)=@_;
+if ($tag eq "img") {  # 识别链接if ($tag eq "img")
+foreach $key (keys %links) {
+print "$links{$key}\n";
+  }
+}
+}
+
+$var="my name is lijianying";
+$ref=\$var;      #引用
+print "$ref\n";#打印引用
+print "$$ref\n";#打印原来结果
+
+@a=(a..z);
+$ref=\@a;
+print "$ref\n";
+print "@$ref\n";
+print "$$ref[2]\n";  ##print "$ref->[2]\n";
+
+%ha=qw(A 1 B 2 C 3);
+$ref=\%ha;
+print "$ref\n";
+print "%$ref\n";
+print "$$ref{B}\n";
+直接引用
+$ref=["a","b","c"];
+print "$ref\n";
+
+$ref=[["a","b","c"],["1","2"]];#数组的数组
+print "$ref\n";
+print "@{$$ref[1]}\n";
+$ref=[["a","b","c"],["1","2"]];#数组的数组@a=(["a","b","c"],["1","2"]) ，$ref=\@a;
+print "$ref\n";
+print "@{$$ref[1]}\n";
+print "$$ref[0][1]\n";
+print "$ref->[0]->[1]\n";
+
+@SSS=(["a","b","c"],["1","2"]);
+$ref="SSS";
+print "$ref\n";
+print "@{$$ref[1]}\n";
+print "$$ref[0][1]\n";
+print "$ref->[0]->[1]\n";
+
+SUB
+$n=234;
+&pp; 
+print "aa::$n\n";
+
+sub pp {
+my $n="HZAU";###  $n="HZAU";
+print "sub::$n\n";
+}
+
+
+#hash of hash;！！！有问题
+%ha=(
+  name=>{
+  xing=>'han',
+  ming=>'meimei',
+}
+  address=>{
+   street=>'hzau',
+   city=>'wuhan',
+}
+}
+print "$ha{adress}\n";
+print "$ha{adress}{city}\n";
+
+$ref=\%ha;
+print "$$ref{adress}{city}\n";
+
+#for $l1 (keys %ha){
+#print "$l1\n";
+#for $l2(keys %{$ha{$l1})
+
+正确（数组套哈希）
+#hash of hash;
+#%ha=(A %ha B 2 C 3);
+@ha=(
+    A,
+ {
+  xing=>'han',
+  ming=>'meimei',
+},
+ {
+   street=>'hzau',
+   city=>'wuhan',
+},
+B,
+2
+);
+print "@ha\n";
+print "$ha[2]{city}\n";
+$ha[5]={id=>123456};
+print "$ha[5]{id}\n";
+$ha[6]=789;
+print "@ha\n";
+
+#hash of hash;
+#%ha (A,@a,B,@b,C,3);
+%ha=(
+ name =>["aa","bb","cc","dd"],
+ pet=>["11","22","33","44"],
+);
+print "$ha{name}\n";
+print "$ha{name}[2]\n";
+print "$ha{pet}[1]\n";
+
+for $c (keys %ha) {
+print "$ha{$c}\n";
+};

@@ -1,0 +1,6 @@
+$a=<STDIN>;
+
+
+print "the result is $a !";
+
+

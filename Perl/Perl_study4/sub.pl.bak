@@ -1,0 +1,12 @@
+
+$str='abc';
+&hw;
+
+
+
+
+sub hw
+{
+	
+print "hello world!";
+}
